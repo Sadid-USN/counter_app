@@ -1,7 +1,7 @@
+import 'package:counter_app/core/determene_position.dart';
 import 'package:counter_app/counter/bloc/counter_bloc.dart';
 import 'package:counter_app/counter/bloc/counter_event.dart';
 import 'package:counter_app/counter/bloc/counter_state.dart';
-import 'package:counter_app/main.dart';
 import 'package:counter_app/presentation/widget/button_actions.dart';
 import 'package:counter_app/weather/bloc/weather_bloc.dart';
 import 'package:flutter/material.dart';

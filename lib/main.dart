@@ -37,29 +37,31 @@ class MyApp extends StatelessWidget {
                   useMaterial3: true,
                 ),
           debugShowCheckedModeBanner: false,
-          home: FutureBuilder(
-            future: _determinePosition(),
-            builder: (context, snap) {
-              if (snap.hasData) {
-                return BlocProvider<WeatherBloc>(
-                    create: (context) => WeatherBloc()
-                      ..add(FetchWeatherEvent(snap.data as Position)),
-                    child: const HomePage());
-              }
-              return const Scaffold(
-                body: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
-            },
-          ),
+          home: const HomePage()
+          
+          // FutureBuilder(
+          //   future: determinePosition(),
+          //   builder: (context, snap) {
+          //     if (snap.hasData) {
+          //       return BlocProvider<WeatherBloc>(
+          //           create: (context) => WeatherBloc()
+          //             ..add(FetchWeatherEvent(snap.data as Position)),
+          //           child: const HomePage());
+          //     }
+          //     return const Scaffold(
+          //       body: Center(
+          //         child: CircularProgressIndicator(),
+          //       ),
+          //     );
+          //   },
+          // ),
         ),
       ),
     );
   }
 }
 
-Future<Position> _determinePosition() async {
+Future<Position> determinePosition() async {
   bool serviceEnabled;
   LocationPermission permission;
 
